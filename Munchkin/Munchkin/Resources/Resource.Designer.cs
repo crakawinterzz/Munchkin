@@ -31,9 +31,6 @@ namespace Munchkin
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7f010000
-			public const int fontPath = 2130771968;
-			
 			static Attribute()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -47,23 +44,23 @@ namespace Munchkin
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f030000
-			public const int calligraphy_tag_id = 2130903040;
+			// aapt resource value: 0x7f040005
+			public const int cardViewButton = 2130968581;
 			
-			// aapt resource value: 0x7f030005
-			public const int cardViewButton = 2130903045;
+			// aapt resource value: 0x7f040000
+			public const int laptop = 2130968576;
 			
-			// aapt resource value: 0x7f030004
-			public const int listViewButton = 2130903044;
+			// aapt resource value: 0x7f040004
+			public const int listViewButton = 2130968580;
 			
-			// aapt resource value: 0x7f030001
-			public const int textView1 = 2130903041;
+			// aapt resource value: 0x7f040001
+			public const int textView1 = 2130968577;
 			
-			// aapt resource value: 0x7f030002
-			public const int textView2 = 2130903042;
+			// aapt resource value: 0x7f040002
+			public const int textView2 = 2130968578;
 			
-			// aapt resource value: 0x7f030003
-			public const int textView3 = 2130903043;
+			// aapt resource value: 0x7f040003
+			public const int textView3 = 2130968579;
 			
 			static Id()
 			{
@@ -79,10 +76,16 @@ namespace Munchkin
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int ListView = 2130837504;
+			public const int child_item = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Main = 2130837505;
+			public const int group_item = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int ListView = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int Main = 2130837507;
 			
 			static Layout()
 			{
@@ -97,8 +100,17 @@ namespace Munchkin
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040000
-			public const int app_name = 2130968576;
+			// aapt resource value: 0x7f030000
+			public const int app_name = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int hello_world = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int menu_settings = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int title_activity_expandable_list = 2130903043;
 			
 			static String()
 			{

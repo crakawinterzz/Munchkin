@@ -3,11 +3,12 @@ using Android.Content.Res;
 using Android.Graphics;
 using Android.Widget;
 using Android.OS;
-using Calligraphy;
+
 
 namespace Munchkin {
 	[Activity(Label = "Munchkin", MainLauncher = true)]
 	public class MainActivity : Activity {
+		
 		protected override void OnCreate(Bundle savedInstanceState) {
 			base.OnCreate(savedInstanceState);
 			SetContentView(Resource.Layout.Main);
@@ -32,7 +33,7 @@ namespace Munchkin {
 			imageViewButton.Click += delegate {
 				SetContentView(Resource.Layout.ListView);
 			};
-
+			var connection = new Sqliteconnection
 		}
 
 	}

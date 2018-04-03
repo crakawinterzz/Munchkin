@@ -48,18 +48,21 @@
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Calligraphy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CallygraphyXamarin.2.3.0\lib\MonoAndroid\Calligraphy.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InfoModel.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="RarityModel.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="SubTypeModel.cs" />
+    <Compile Include="TypeModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\quasimodo.ttf" />
