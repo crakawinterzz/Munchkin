@@ -49,19 +49,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardInfo.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="ExpandableDataAdapter.cs" />
     <Compile Include="DataAdapter.cs" />
-    <Compile Include="InfoModel.cs" />
+    <Compile Include="FileAccessHelper.cs" />
+    <Compile Include="FileHelper.cs" />
+    <Compile Include="Info.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="RarityModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="SubTypeModel.cs" />
@@ -82,7 +85,7 @@
     <AndroidResource Include="Resources\layout\MainListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Assets\Database\munchkin.db" />
+    <AndroidAsset Include="Assets\munchkin.db" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -91,7 +94,9 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\Database\" />
     <Folder Include="Assets\Fonts\" />
+    <Folder Include="Resources\Database\" />
     <Folder Include="Resources\mipmap-hdpi\" />
     <Folder Include="Resources\mipmap-mdpi\" />
     <Folder Include="Resources\mipmap-xhdpi\" />

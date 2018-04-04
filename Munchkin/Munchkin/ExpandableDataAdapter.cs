@@ -8,6 +8,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SQLite;
 
 namespace Munchkin
 {
@@ -61,7 +62,10 @@ namespace Munchkin
         public override int GroupCount
         {
             get {
-                return 26;
+							string dbPath = FileAccessHelper.GetLocalFilePath("munchkin.db");
+							var db = new SQLiteConnection(dbPath);
+							var cardInfos = db.Table<CardInfo>().Count();
+				return cardInfos;
             }
         }
 
