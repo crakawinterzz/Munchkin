@@ -11,7 +11,9 @@ namespace Munchkin {
 		
 		protected override void OnCreate(Bundle savedInstanceState) {
 			base.OnCreate(savedInstanceState);
-			SetContentView(Resource.Layout.Main);
+            var db = new SQLite.SQLiteConnection("/Assets/Database/Munchkin.db");
+            int count = db.Table<CardInfo>().Count();
+            SetContentView(Resource.Layout.Main);
 			TextView text1 = FindViewById<TextView>(Resource.Id.textView1);
 			TextView text2 = FindViewById<TextView>(Resource.Id.textView2);
 			TextView text3 = FindViewById<TextView>(Resource.Id.textView3);
@@ -28,13 +30,24 @@ namespace Munchkin {
 			// Set our view from the "main" layout resource
 
 			listViewButton.Click += delegate {
-				SetContentView(Resource.Layout.ListView);
-			};
+				SetContentView(Resource.Layout.MainListView);
+
+                //			var listView = FindViewById<ListView> (Resource.Id.myListView);
+                //			listView.Adapter = new DataAdapter (this, Data.SampleData ());
+                //
+                //			listView.ItemClick += (sender, e) => {
+                //				Console.WriteLine(e.Position.ToString());
+                //			};
+
+                var listView = FindViewById<ExpandableListView>(Resource.Id.myExpandableListview);
+                listView.SetAdapter(new ExpandableDataAdapter(this, Data.SampleData()));
+            };
 			imageViewButton.Click += delegate {
-				SetContentView(Resource.Layout.ListView);
+				SetContentView(Resource.Layout.MainListView);
 			};
-			var connection = new Sqliteconnection
+		
 		}
 
 	}
+  
 }
