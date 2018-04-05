@@ -44,8 +44,8 @@ namespace Munchkin
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f040003
-			public const int DataHeader = 2130968579;
+			// aapt resource value: 0x7f040005
+			public const int DataHeader = 2130968581;
 			
 			// aapt resource value: 0x7f040001
 			public const int DataId = 2130968577;
@@ -56,23 +56,26 @@ namespace Munchkin
 			// aapt resource value: 0x7f040002
 			public const int DataValue = 2130968578;
 			
-			// aapt resource value: 0x7f040008
-			public const int cardViewButton = 2130968584;
+			// aapt resource value: 0x7f04000a
+			public const int cardViewButton = 2130968586;
 			
-			// aapt resource value: 0x7f040007
-			public const int listViewButton = 2130968583;
-			
-			// aapt resource value: 0x7f040009
-			public const int myExpandableListview = 2130968585;
+			// aapt resource value: 0x7f040003
+			public const int group = 2130968579;
 			
 			// aapt resource value: 0x7f040004
-			public const int textView1 = 2130968580;
+			public const int item = 2130968580;
 			
-			// aapt resource value: 0x7f040005
-			public const int textView2 = 2130968581;
+			// aapt resource value: 0x7f040009
+			public const int listViewButton = 2130968585;
 			
 			// aapt resource value: 0x7f040006
-			public const int textView3 = 2130968582;
+			public const int textView1 = 2130968582;
+			
+			// aapt resource value: 0x7f040007
+			public const int textView2 = 2130968583;
+			
+			// aapt resource value: 0x7f040008
+			public const int textView3 = 2130968584;
 			
 			static Id()
 			{
@@ -91,13 +94,19 @@ namespace Munchkin
 			public const int DataListItem = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int ListGroup = 2130837505;
+			public const int group_item = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int Main = 2130837506;
+			public const int item_layout = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int MainListView = 2130837507;
+			public const int ListGroup = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int ListView = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int Main = 2130837509;
 			
 			static Layout()
 			{

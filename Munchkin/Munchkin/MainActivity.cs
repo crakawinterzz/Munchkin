@@ -9,8 +9,12 @@ using SQLite;
 
 namespace Munchkin {
 	[Activity(Label = "Munchkin", MainLauncher = true)]
-	public class MainActivity : Activity {
-		
+	public class MainActivity : Activity
+	{
+	    private ExpandableListViewAdapter mAdapter;
+	    private ExpandableListView expandableListView;
+        List<string> group = new List<string>();
+        Dictionary<string,List<string>> dicMyMap = new Dictionary<string, List<string>>();
 		protected override void OnCreate(Bundle savedInstanceState) {
 			base.OnCreate(savedInstanceState);
 
@@ -31,9 +35,10 @@ namespace Munchkin {
 			// Set our view from the "main" layout resource
 
 			listViewButton.Click += delegate {
-				SetContentView(Resource.Layout.MainListView);
+				SetContentView(Resource.Layout.ListView);
+                var toolbar = FindViewById<Android.S7.Widget.Toolbar>(Resource.Id.toolbar)
 				var listView = FindViewById<ExpandableListView>(Resource.Id.myExpandableListview);
-				listView.SetAdapter(new ExpandableDataAdapter(this, Data.SampleData()));
+				listView.SetAdapter(new ExpandableListViewAdapter(this, Data.SampleData()));
 			};
 			imageViewButton.Click += delegate {
 				SetContentView(Resource.Layout.MainListView);
