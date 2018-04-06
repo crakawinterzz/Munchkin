@@ -5,12 +5,14 @@ using Android.Content.Res;
 using Android.Graphics;
 using Android.Widget;
 using Android.OS;
+using Android.Support.V7.App;
+using Java.Sql;
 using SQLite;
+using System;
 
 namespace Munchkin {
 	[Activity(Label = "Munchkin", MainLauncher = true)]
-	public class MainActivity : Activity
-	{
+	public class MainActivity : AppCompatActivity { 
 	    private ExpandableListViewAdapter mAdapter;
 	    private ExpandableListView expandableListView;
         List<string> group = new List<string>();
@@ -36,17 +38,44 @@ namespace Munchkin {
 
 			listViewButton.Click += delegate {
 				SetContentView(Resource.Layout.ListView);
-                var toolbar = FindViewById<Android.S7.Widget.Toolbar>(Resource.Id.toolbar)
-				var listView = FindViewById<ExpandableListView>(Resource.Id.myExpandableListview);
-				listView.SetAdapter(new ExpandableListViewAdapter(this, Data.SampleData()));
+				var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+				SetSupportActionBar(toolbar);
+				SupportActionBar.Title = "Muchkin CCG List";
+				expandableListView = FindViewById<ExpandableListView>(Resource.Id.expandableListView);
+
+				SetData(out mAdapter);
+				expandableListView.SetAdapter(mAdapter);
 			};
 			imageViewButton.Click += delegate {
-				SetContentView(Resource.Layout.MainListView);
+				SetContentView(Resource.Layout.ListView);
+				var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+				SetSupportActionBar(toolbar);
+				SupportActionBar.Title = "Muchkin CCG List";
+				expandableListView = FindViewById<ExpandableListView>(Resource.Id.expandableListView);
+
+				SetData(out mAdapter);
+				expandableListView.SetAdapter(mAdapter);
 			};
 		
 		}
 
+		private void SetData(out ExpandableListViewAdapter mAdapter)
+		{
+			List<string> groupA = new List<string>();
+			List<string> groupB = new List<string>();
+			string dbPath = FileAccessHelper.GetLocalFilePath("munchkin.db");
+			var db = new SQLiteConnection(dbPath);
 
+			var cardInfos = db.Table<CardInfo>().Where(x => x.Id > 0);
+			foreach (var listing in cardInfos){
+				group.Add(listing.Name);
+			}
+			dicMyMap.Add(@group[0], groupA);
+			dicMyMap.Add(@group[1], groupB);
+
+			mAdapter = new ExpandableListViewAdapter(this,@group,dicMyMap);
+
+		}
 	}
   
 }

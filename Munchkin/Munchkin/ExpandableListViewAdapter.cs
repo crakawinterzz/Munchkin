@@ -60,11 +60,11 @@ namespace Munchkin
             if (convertView == null)
             {
                 LayoutInflater inflater = (LayoutInflater) context.GetSystemService(Context.LayoutInflaterService);
-                convertView = inflater.Inflate(Resource.Layout.item_layout, null);
+                convertView = inflater.Inflate(Resource.Layout.itemList, null);
 
             }
 
-            TextView textViewItem = convertView.FindViewById<TextView>(Resource.Id.item);
+            TextView textViewItem = convertView.FindViewById<TextView>(Resource.Id.items);
             string content = (string) GetChild(groupPosition, childPosition);
             textViewItem.Text = content;
             return convertView;
@@ -89,7 +89,7 @@ namespace Munchkin
             }
 
             string textGroup = (string) GetGroup(groupPosition);
-            TextView textViewGroup = convertView.FindViewById<TextView>(Resource.Id.group);
+            TextView textViewGroup = convertView.FindViewById<TextView>(Resource.Id.groupd);
             textViewGroup.Text = textGroup;
             return convertView;
         }
