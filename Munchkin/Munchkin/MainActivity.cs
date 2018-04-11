@@ -61,11 +61,21 @@ namespace Munchkin {
 			var db = new SQLiteConnection(dbPath);
 
 			var cardInfos = db.Table<CardInfo>().Where(x => x.Id > 0);
+			var i = 0;
 			foreach (var listing in cardInfos){
 				group.Add(listing.Name);
+				var newList = new List<string>();
+				
+				var rarity = db.Table<Rarity>().FirstOrDefault(x => x.Id == listing.Rarity) ?? new Rarity();
+				var faction = db.Table<Faction>().FirstOrDefault(x => x.Id == listing.Faction) ?? new Faction();
+				var type = db.Table<Type>().FirstOrDefault(x => x.Id == listing.Type) ?? new Type();
+				var subType = db.Table<SubType>().FirstOrDefault(x => x.Id == listing.SubType) ?? new SubType();
+				newList.Add("R:"+rarity.Name+ "F:" + faction.Name);
+				dicMyMap.Add(@group[i], newList);
+				i++;
 			}
-			dicMyMap.Add(@group[0], groupA);
-			dicMyMap.Add(@group[1], groupB);
+			
+		
 
 			mAdapter = new ExpandableListViewAdapter(this,@group,dicMyMap);
 
