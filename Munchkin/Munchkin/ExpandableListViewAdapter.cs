@@ -64,7 +64,7 @@ namespace Munchkin
 
             }
 
-            TextView textViewItem = convertView.FindViewById<TextView>(Resource.Id.items);
+            TextView textViewItem = convertView.FindViewById<TextView>(Resource.Id.item);
             string content = (string) GetChild(groupPosition, childPosition);
             textViewItem.Text = content;
             return convertView;
@@ -89,7 +89,7 @@ namespace Munchkin
             }
 
             string textGroup = (string) GetGroup(groupPosition);
-            TextView textViewGroup = convertView.FindViewById<TextView>(Resource.Id.groupd);
+            TextView textViewGroup = convertView.FindViewById<TextView>(Resource.Id.group);
             textViewGroup.Text = textGroup;
             return convertView;
         }

@@ -5,14 +5,14 @@ using Android.Content.Res;
 using Android.Graphics;
 using Android.Widget;
 using Android.OS;
-using Android.Support.V7.App;
+
 using Java.Sql;
 using SQLite;
 using System;
 
 namespace Munchkin {
 	[Activity(Label = "Munchkin", MainLauncher = true)]
-	public class MainActivity : AppCompatActivity { 
+	public class MainActivity : Activity { 
 	    private ExpandableListViewAdapter mAdapter;
 	    private ExpandableListView expandableListView;
         List<string> group = new List<string>();
@@ -38,9 +38,6 @@ namespace Munchkin {
 
 			listViewButton.Click += delegate {
 				SetContentView(Resource.Layout.ListView);
-				var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-				SetSupportActionBar(toolbar);
-				SupportActionBar.Title = "Muchkin CCG List";
 				expandableListView = FindViewById<ExpandableListView>(Resource.Id.expandableListView);
 
 				SetData(out mAdapter);
@@ -48,9 +45,6 @@ namespace Munchkin {
 			};
 			imageViewButton.Click += delegate {
 				SetContentView(Resource.Layout.ListView);
-				var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-				SetSupportActionBar(toolbar);
-				SupportActionBar.Title = "Muchkin CCG List";
 				expandableListView = FindViewById<ExpandableListView>(Resource.Id.expandableListView);
 
 				SetData(out mAdapter);

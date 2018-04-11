@@ -5,10 +5,10 @@
     android:orientation="vertical"
     android:padding="10dp">
     <TextView
-        android:id="@+id/groupd"
+        android:id="@+id/group"
         android:layout_marginLeft="30dp"
-        android:layout_width="30dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textStyle="bold" />
 </LinearLayout>
